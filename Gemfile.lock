@@ -111,6 +111,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.6)
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -170,6 +171,7 @@ DEPENDENCIES
   omniauth-heroku-sso
   puma
   rails (= 4.0.1)
+  redis
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3

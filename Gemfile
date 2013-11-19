@@ -47,3 +47,5 @@ gem 'newrelic_rpm'
 
 gem 'omniauth'
 gem 'omniauth-heroku-sso'
+
+gem 'redis'
