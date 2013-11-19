@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  heroku_id: 1
+  plan: MyString
+  region: MyString
+  callback_url: MyString
+  options: MyText
+
+two:
+  heroku_id: 1
+  plan: MyString
+  region: MyString
+  callback_url: MyString
+  options: MyText

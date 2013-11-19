@@ -47,6 +47,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -83,6 +84,11 @@ GEM
     newrelic_rpm (3.6.4.122)
     nokogiri (1.4.7)
     ntlm-http (0.1.1)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-heroku-sso (1.0.3)
+      omniauth
     polyglot (0.3.3)
     puma (2.6.0)
       rack (>= 1.1, < 2.0)
@@ -160,6 +166,8 @@ DEPENDENCIES
   jquery-rails
   kensa
   newrelic_rpm
+  omniauth
+  omniauth-heroku-sso
   puma
   rails (= 4.0.1)
   sass-rails (~> 4.0.0)

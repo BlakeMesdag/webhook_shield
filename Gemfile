@@ -44,3 +44,6 @@ gem 'puma'
 gem 'debugger', group: [:development, :test]
 
 gem 'newrelic_rpm'
+
+gem 'omniauth'
+gem 'omniauth-heroku-sso'
