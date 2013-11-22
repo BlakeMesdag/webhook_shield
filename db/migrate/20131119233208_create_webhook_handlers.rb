@@ -1,7 +1,7 @@
 class CreateWebhookHandlers < ActiveRecord::Migration
   def change
     create_table :webhook_handlers do |t|
-      t.string :type
+      t.string :kind
       t.string :url
 
       t.timestamps
