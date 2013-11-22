@@ -1,2 +1,0 @@
-module Heroku::ResourcesHelper
-end

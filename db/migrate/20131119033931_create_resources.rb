@@ -7,6 +7,9 @@ class CreateResources < ActiveRecord::Migration
       t.string :callback_url
       t.text :options
 
+      t.string :worker_type, default: "redis"
+      t.string :worker_service_url
+
       t.timestamps
     end
 
