@@ -1,3 +1,6 @@
+setuid 'deploy'
+setgid 'deploy'
+
 rails_env = ENV['RAILS_ENV'] || 'development'
 
 threads 0,16
