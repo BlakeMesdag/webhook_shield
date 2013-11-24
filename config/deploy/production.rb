@@ -39,5 +39,3 @@ server 'webhookshield.com', user: 'deploy', roles: %w{web app}
 # setting per server overrides global ssh_options
 
 # fetch(:default_env).merge!(rails_env: :production)
-
-require 'capistrano-puma'

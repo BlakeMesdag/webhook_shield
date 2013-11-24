@@ -1,28 +1,17 @@
 set :application, 'webhook_shield'
 set :repo_url, 'git@github.com:BlakeMesdag/webhook_shield.git'
 
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-
-# set :deploy_to, '/var/www/my_app'
-# set :scm, :git
-
-# set :format, :pretty
-# set :log_level, :debug
-# set :pty, true
-
-# set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{tmp/pids tmp/sockets}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      run 'bundle exec pumactl --pid-file tmp/pids/puma.pid restart'
     end
   end
 

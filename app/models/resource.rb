@@ -4,7 +4,7 @@ class Resource < ActiveRecord::Base
 
   def webhook_url
     if Rails.env.production?
-      "https://hookship.com/webhooks/#{id}"
+      "https://webhookshield.com/webhooks/#{id}"
     else
       "http://localhost:3000/webhooks/#{id}"
     end

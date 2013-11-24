@@ -1,5 +1,13 @@
 rails_env = ENV['RAILS_ENV'] || 'development'
 
+environment rails_env
+
+if rails_env == 'production'
+  daemonize true
+else
+  daemonize false
+end
+
 threads 0,16
 
 bind  "unix://tmp/sockets/puma.sock"
