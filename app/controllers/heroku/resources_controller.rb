@@ -18,7 +18,7 @@ class Heroku::ResourcesController < ApplicationController
     session[:heroku_sso] = params['nav-data']
     session[:email]      = params[:email]
 
-    redirect '/'
+    redirect_to '/'
   end
 
   def create

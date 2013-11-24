@@ -51,3 +51,5 @@ gem 'omniauth-heroku-sso'
 gem 'redis'
 
 gem 'twitter-bootstrap-rails'
+
+gem 'capistrano', '~> 3.0.1'
