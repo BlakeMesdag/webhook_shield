@@ -7,5 +7,5 @@ ShopifyHerokuServices::Application.routes.draw do
 
   resource :configuration, only: [:show, :update]
 
-  root to: "configuration#show"
+  root to: "configurations#show"
 end

@@ -9,6 +9,7 @@ class CreateResources < ActiveRecord::Migration
 
       t.string :worker_type, default: "redis"
       t.string :worker_service_url
+      t.string :job_class, default: "WebhookJob"
 
       t.timestamps
     end

@@ -2,7 +2,7 @@ class WebhooksController < ActionController::Metal
   def create
     self.response_body = ""
     self.status = 200
-    return unless handler = WebhookHandler.where(resource_id: params[:resource_id]).first
-    handler.forward(env, params)
+    return unless resource = Resource.where(id: params[:resource_id].to_i).first
+    resource.forward(env, params)
   end
 end
