@@ -1,7 +1,5 @@
-require 'puma/capistrano'
-
 set :application, 'webhook_shield'
-set :repo_url, 'git@github.com:BlakeMesdag/shopify-heroku-services.git'
+set :repo_url, 'git@github.com:BlakeMesdag/webhook_shield.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 

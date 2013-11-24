@@ -53,3 +53,4 @@ gem 'redis'
 gem 'twitter-bootstrap-rails'
 
 gem 'capistrano', '~> 3.0.1'
+gem 'capistrano-puma', require: false
