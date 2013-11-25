@@ -26,7 +26,7 @@ class Heroku::ResourcesController < ApplicationController
 
     render json: {
       id: resource.id,
-      config: {'WEBHOOK_SHIELD_URL' => resource.webhook_url},
+      config: {'WEBHOOKSHIELD_URL' => resource.webhook_url},
       message: "You're all setup to accept webooks at ..."
     }
   end
