@@ -1,4 +1,3 @@
-set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :application, 'webhook_shield'
 set :repo_url, 'git@github.com:BlakeMesdag/webhook_shield.git'
 
@@ -12,7 +11,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{current_path} && bin/bundle exec pumactl --pid-file tmp/pids/puma.pid restart"
+      execute "cd #{current_path} && RAILS_ENV=production bin/bundle exec pumactl -P tmp/pids/puma.pid restart"
     end
   end
 
@@ -29,13 +28,13 @@ namespace :deploy do
 
 end
 
-task :query_interactive do
-  on 'deploy@webhookshield.com' do
-    info capture("[[ $- == *i* ]] && echo 'Interactive' || echo 'Not interactive'")
+namespace :puma do
+
+  desc "Start the application"
+  task :start do
+    on roles(:app), in: :sequence, wait: 5, :except => { :no_release => true } do
+      execute "cd #{current_path} && RAILS_ENV=production bin/bundle exec puma -C config/puma.rb"
+    end
   end
-end
-task :query_login do
-  on 'deploy@webhookshield.com' do
-    info capture("shopt -q login_shell && echo 'Login shell' || echo 'Not login shell'")
-  end
+
 end
