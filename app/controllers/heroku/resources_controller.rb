@@ -17,6 +17,7 @@ class Heroku::ResourcesController < ApplicationController
     cookies['heroku-nav-data'] = params['nav-data']
     session[:heroku_sso] = params['nav-data']
     session[:email]      = params[:email]
+    session[:app]        = params[:app]
 
     redirect_to '/'
   end
