@@ -75,6 +75,13 @@ ShopifyHerokuServices::Application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
+  config.after_initialize do
+    heroku_config = YAML.load_file("/var/www/current/config/heroku.yml")['production']
+    ENV['HEROKU_USERNAME'] = heroku_config['username']
+    ENV['HEROKU_PASSWORD'] = heroku_config['password']
+    ENV['SSO_SALT'] = heroku_config['sso_salt']
+  end
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
