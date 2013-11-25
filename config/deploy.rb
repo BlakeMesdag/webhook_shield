@@ -15,16 +15,6 @@ namespace :deploy do
       execute "cd #{current_path} && RAILS_ENV=production bin/bundle exec pumactl -P tmp/pids/puma.pid restart"
     end
   end
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-
   after :finishing, 'deploy:cleanup'
 
 end
@@ -38,4 +28,15 @@ namespace :puma do
     end
   end
 
+end
+
+namespace :assets do
+  desc "Precompile assets"
+  task :precompile do
+    on roles(:app) do
+      execute "cd #{current_path} && RAILS_ENV=production bin/bundle exec rake assets:precompile"
+    end
+  end
+
+  before "deploy:restart", "assets:precompile"
 end
