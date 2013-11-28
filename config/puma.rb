@@ -8,7 +8,8 @@ else
   daemonize false
 end
 
-threads 0,16
+threads 8,16
+workers 4
 
 bind  "unix://tmp/sockets/puma.sock"
 pidfile "tmp/pids/puma.pid"
