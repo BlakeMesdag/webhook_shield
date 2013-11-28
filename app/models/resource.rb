@@ -12,8 +12,8 @@ class Resource < ActiveRecord::Base
 
   # Empty interface, implement later
   def forward(env, params);
-    Rails.logger.info "Env: #{env.inspect}"
-    Rails.logger.info "Params: #{params.inspect}"
+    # Rails.logger.info "Env: #{env.inspect}"
+    # Rails.logger.info "Params: #{params.inspect}"
   end
 
   private
