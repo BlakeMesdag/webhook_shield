@@ -1,7 +1,7 @@
 set :application, 'webhook_shield'
 set :repo_url, 'git@github.com:BlakeMesdag/webhook_shield.git'
 
-set :linked_dirs, %w{tmp/pids tmp/sockets log}
+set :linked_dirs, %w{tmp/pids tmp/sockets log .bundle}
 set :linked_files, %w{config/heroku.yml}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
