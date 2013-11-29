@@ -25,6 +25,20 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :target_queue, "Target queue" %>
+    <div class"form-control">
+      <%= f.text_field :target_queue, placeholder: "webhooks" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :redis_namespace, "Redis namespace" %>
+    <div class"form-control">
+      <%= f.text_field :redis_namespace, placeholder: "webhooks" %>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.submit "Save", class: "btn btn-small btn-success" %>
     <%= f.button "Reset", type: "reset", class: "btn btn-small btn-danger" %>
   </div>
