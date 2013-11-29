@@ -33,7 +33,7 @@ class Resource < ActiveRecord::Base
     args = {
       url: worker_service_url
     }
-    args.merge!(namespace: redis_namespace) if redis_namespace
+    args.merge!(namespace: redis_namespace) if redis_namespace.present?
     args
   end
 
