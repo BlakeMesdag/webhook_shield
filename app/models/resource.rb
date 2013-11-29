@@ -1,5 +1,6 @@
-class Resource < ActiveRecord::Base
+require 'sidekiq'
 
+class Resource < ActiveRecord::Base
   before_save :default_plan_to_test
 
   def webhook_url
