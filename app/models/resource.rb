@@ -29,6 +29,8 @@ class Resource < ActiveRecord::Base
     return
   end
 
+  private
+
   def sidekiq_client_args
     args = {
       url: worker_service_url
@@ -36,8 +38,6 @@ class Resource < ActiveRecord::Base
     args.merge!(namespace: redis_namespace) if redis_namespace.present?
     args
   end
-
-  private
 
   def sidekiq_push_args(headers, data)
     {

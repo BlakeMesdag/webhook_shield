@@ -56,3 +56,5 @@ gem 'capistrano', '~> 3.0.1'
 
 gem 'sidekiq'
 gem 'redis-namespace'
+
+gem 'mocha', require: false, group: [:test]
