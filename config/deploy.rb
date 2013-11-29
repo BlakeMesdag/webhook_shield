@@ -40,3 +40,25 @@ namespace :assets do
 
   before "deploy:restart", "assets:precompile"
 end
+
+namespace :bundle do
+
+  desc 'Install bundle'
+  task :install do
+    on roles(:all) do
+      execute "cd #{current_path} && RAILS_ENV=production sudo bundle install --without development:test"
+    end
+  end
+
+  before "assets:precompile", "bundle:install"
+end
+
+namespace :db do
+
+  desc 'Migrate db'
+  task :migrate do
+    on roles(:db) do
+      execute "cd #{current_path} && RAILS_ENV=production bin/bundle exec rake db:migrate"
+    end
+  end
+end

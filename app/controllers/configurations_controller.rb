@@ -20,6 +20,6 @@ class ConfigurationsController < ApplicationController
   end
 
   def resource_params
-    params.require(:resource).permit(:worker_service_url, :worker_type, :job_class)
+    params.require(:resource).permit(:worker_service_url, :worker_type, :job_class, :redis_namespace, :target_queue)
   end
 end
