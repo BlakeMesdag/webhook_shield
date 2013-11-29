@@ -12,14 +12,14 @@ class Resource < ActiveRecord::Base
   end
 
   # Empty interface, implement later
-  def forward(hmac, data)
+  def forward(headers, data)
     case worker_type
       when 'resque', 'sidekiq'
         Sidekiq.configure_client do |config|
           config.redis = sidekiq_client_args
         end
 
-        Sidekiq::Client.push(sidekiq_push_args(hmac, data))
+        Sidekiq::Client.push(sidekiq_push_args(headers, data))
         Sidekiq.instance_variable_set(:@redis, nil)
         Rails.logger.info "Successfully forwarded webhook for #{id}"
       else
@@ -39,11 +39,11 @@ class Resource < ActiveRecord::Base
 
   private
 
-  def sidekiq_push_args(hmac, data)
+  def sidekiq_push_args(headers, data)
     {
       'queue' => target_queue,
       'class' => job_class,
-      'args' => [data: data, hmac: hmac]
+      'args' => [data: data, headers: headers]
     }
   end
 
