@@ -41,7 +41,12 @@ gem 'kensa', group: [:development, :test]
 gem 'puma'
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+ruby_version_major, ruby_version_minor, ruby_version_build = RUBY_VERSION.split(".").map(&:to_i)
+if ruby_version_major >= 2
+  gem 'byebug', group: [:development, :test]
+else
+  gem 'debugger', group: [:development, :test]
+end
 
 gem 'newrelic_rpm'
 

@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ShopifyHerokuServices::Application.config.secret_key_base = '480468d89c66de9395a42337606c7ae1bc40d565391fabec7ffc0f952c7156f4907078a6439a27d18194ed103673d8e02ce57064be9fe3a1b35c26b6b62b53d0'
+WebhookShield::Application.config.secret_key_base = '480468d89c66de9395a42337606c7ae1bc40d565391fabec7ffc0f952c7156f4907078a6439a27d18194ed103673d8e02ce57064be9fe3a1b35c26b6b62b53d0'

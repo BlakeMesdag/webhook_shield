@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ShopifyHerokuServices::Application.load_tasks
+WebhookShield::Application.load_tasks

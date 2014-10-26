@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-ShopifyHerokuServices::Application.config.session_store :cookie_store, key: '_shopify-heroku-services_session'
+WebhookShield::Application.config.session_store :cookie_store, key: '_webhook_shield_session'
