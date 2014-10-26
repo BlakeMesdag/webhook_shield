@@ -5,35 +5,35 @@
 <%= form_for current_resource, {url: configuration_path, html: {class: "form"}} do |f| %>
   <div class="form-group">
     <%= f.label :worker_type, "Worker type" %>
-    <div class"form-control">
+    <div class="form-control">
       <%= f.select :worker_type, [["Resque", "resque"], ["Sidekiq", "sidekiq"]], {} %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :worker_service_url, "Worker service url" %>
-    <div class"form-control">
+    <div class="form-control">
       <%= f.text_field :worker_service_url, class: "input input-xxlarge", placeholder: "redis://example:password@192.168.7.152/" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :job_class, "Job class" %>
-    <div class"form-control">
+    <div class="form-control">
       <%= f.text_field :job_class, placeholder: "WebhookJob" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :target_queue, "Target queue" %>
-    <div class"form-control">
+    <div class="form-control">
       <%= f.text_field :target_queue, placeholder: "webhooks" %>
     </div>
   </div>
 
   <div class="form-group">
     <%= f.label :redis_namespace, "Redis namespace" %>
-    <div class"form-control">
+    <div class="form-control">
       <%= f.text_field :redis_namespace, placeholder: "resque" %>
     </div>
   </div>
